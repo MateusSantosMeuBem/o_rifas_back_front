@@ -1,14 +1,19 @@
 import Title from './Components/Title';
 
 import './App.css'
+import Banner from './Components/Banner';
+import NumberButton from './Components/Numbers/NumberButton'
 
 const App = () => {
 
   return (
     <>
-      {/* Título */}
       <Title />
-      {/* Banner */}
+      <Banner />
+      <NumberButton
+        label='1'
+        avaiable
+      />
       {/* Números */}
       {/* Dados de comprar */}
       {/* Footer */}

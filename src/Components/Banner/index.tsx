@@ -3,8 +3,7 @@ import './style.css'
 const Banner = () => {
 
     return (
-        <>
-        </>
+        <div className='banner'></div>
     )
 }
 
