@@ -12,7 +12,6 @@ const App = () => {
       {/* Números */}
       {/* Dados de comprar */}
       {/* Footer */}
-      'Work in progress...'
     </>
   )
 }
