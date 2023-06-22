@@ -4,18 +4,25 @@ input {
     border-radius: 8px;
 
     border: 1px solid rgb(0, 75, 150);
-
     color: #fff;
+
+    cursor: pointer;
 }
 
 input:disabled {
-    background-color: yellow;
+    border: 1px solid rgba(63, 63, 70, 0.20);
+    background: rgba(63, 63, 70, 0.20);
+    color: #71717A66;
+
+    cursor: auto;
 }
 
 .unchecked {
-    background-color: red;
+    border: 1px solid #71717A;
+    background: #A1A1AA;
 }
 
 .checked {
-    background-color: blue;
+    border: 1px solid #4F46E5;
+    background: #818CF8;
 }
