@@ -1,37 +1,17 @@
-import Title from './Components/Title';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css'
-import Banner from './Components/Banner';
-import NumberButton from './Components/Numbers/NumberButton'
+import Raffle from "./Pages/Raffle";
+
 
 const App = () => {
 
   return (
-    <>
-      <Title />
-      <Banner />
-      <NumberButton
-        label='1'
-        avaiable
-      />
-      <NumberButton
-        label='2'
-        avaiable
-      />
-      <NumberButton
-        label='3'
-      />
-      <NumberButton
-        label='4'
-      />
-      <NumberButton
-        label='5'
-        avaiable
-      />
-      {/* Números */}
-      {/* Dados de comprar */}
-      {/* Footer */}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/:seller" element={<Raffle />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -10,7 +10,6 @@ const NumberButton = ({
 }: NumberButtonProps) => {
 
     const [isChecked, setIsChecked] = useState<boolean>(false);
-    console.log(isChecked);
 
     return (
         <input
