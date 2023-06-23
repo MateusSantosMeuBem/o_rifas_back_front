@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import Banner from "../../Components/Banner"
-import NumberButton from "../../Components/Numbers/NumberButton"
-import Title from "../../Components/Title"
-import { SellerNumbers, SellerProps, defaultSeller } from "../../props/SellerProps";
+import Banner from "@/Components/Banner"
+import NumberButton from "@/Components/Numbers/NumberButton"
+import Title from "@/Components/Title"
+import { SellerNumbers, SellerProps, defaultSeller } from "@/props/SellerProps";
 
 import { useParams } from 'react-router-dom';
 
