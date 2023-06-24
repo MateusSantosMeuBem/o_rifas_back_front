@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import Banner from '@/Components/Banner';
+import { buildMessage } from '@/utils/string';
 import NumberButton from '@/Components/Numbers/NumberButton';
 import Title from '@/Components/Title';
 import { SellerNumbers, SellerProps, defaultSeller } from '@/props/SellerProps';
-import ContactButton from '@/Components/Contact/ContactButton';
 
 import { useParams } from 'react-router-dom';
+import Contact from '@/Components/Contact';
 
 const Raffle = () => {
 
@@ -31,8 +32,6 @@ const Raffle = () => {
     fetchData();
   }, [seller])
 
-  console.log(chosenNumbers);
-
   return (
     <>
       <Title />
@@ -45,13 +44,13 @@ const Raffle = () => {
           key={number}
         />
       ))}
-      <ContactButton
-        message=''
+      {/* Números */}
+      {/* Dados de comprar */}
+      <Contact
+        message={buildMessage(chosenNumbers, localSeller.sellerName, localSeller.pix)}
         sellerName={localSeller.sellerName}
         contact={localSeller.contact}
       />
-      {/* Números */}
-      {/* Dados de comprar */}
       {/* Footer */}
     </>
   )
