@@ -5,6 +5,7 @@ import NumberButton from '@/Components/Numbers/NumberButton';
 import Title from '@/Components/Title';
 import { SellerNumbers, SellerProps, defaultSeller } from '@/props/SellerProps';
 import ContactButton from '@/Components/Contact/ContactButton';
+import '@/Pages/Raffle/style.css'
 
 import { useParams } from 'react-router-dom';
 
@@ -37,14 +38,16 @@ const Raffle = () => {
     <>
       <Title />
       <Banner />
-      {localSeller.numbers.map(({ number, sold }: SellerNumbers) => (
-        <NumberButton
-          setChosenNumbers={setChosenNumbers}
-          label={number}
-          avaiable={sold === 'NÃO' ? true : false}
-          key={number}
-        />
-      ))}
+        <div className='containerNumberButtons'>
+          {localSeller.numbers.map(({ number, sold }: SellerNumbers) => (
+            <NumberButton
+              setChosenNumbers={setChosenNumbers}
+              label={number}
+              avaiable={sold === 'NÃO' ? true : false}
+              key={number}
+            />
+          ))}
+        </div>
       <ContactButton
         message=''
         sellerName={localSeller.sellerName}

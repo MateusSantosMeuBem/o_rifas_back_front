@@ -6,41 +6,41 @@ import { NumberButtonProps } from './NumberButtonProps';
 
 
 const handleClick = (
-    setChosenNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-    label: string,
-    isChecked: boolean,
+  setChosenNumbers: React.Dispatch<React.SetStateAction<string[]>>,
+  label: string,
+  isChecked: boolean,
 ) => {
-    console.log(isChecked);
-    if (!isChecked) {
-        console.log(`Adding ${label}`);
-        setChosenNumbers((prev) => [...prev, label]);
-    } else {
-        console.log(`Removing ${label}`);
-        setChosenNumbers((prev) => prev.filter((number) => number !== label));
-    }
+  console.log(isChecked);
+  if (!isChecked) {
+    console.log(`Adding ${label}`);
+    setChosenNumbers((prev) => [...prev, label]);
+  } else {
+    console.log(`Removing ${label}`);
+    setChosenNumbers((prev) => prev.filter((number) => number !== label));
+  }
 }
 
 
 
 const NumberButton = ({
-    avaiable,
-    label,
-    setChosenNumbers,
+  avaiable,
+  label,
+  setChosenNumbers,
 }: NumberButtonProps) => {
-    const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
-    return (
-        <input
-            type='button'
-            value={label}
-            disabled={!avaiable}
-            className={isChecked ? 'checked' : 'unchecked'}
-            onClick={() => {
-                setIsChecked(!isChecked);
-                handleClick(setChosenNumbers, label, isChecked);
-            }}
-        />
-    )
+  return (
+    <input
+      type='button'
+      value={label}
+      disabled={!avaiable}
+      className={isChecked ? 'checked' : 'unchecked'}
+      onClick={() => {
+        setIsChecked(!isChecked);
+        handleClick(setChosenNumbers, label, isChecked);
+      }}
+    />
+  )
 }
 
 export default NumberButton
