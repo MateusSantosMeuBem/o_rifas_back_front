@@ -9,8 +9,8 @@ const Contact = ({
     contact,
 }: ContactButtonProps) => {
     return (
-        <div className="contact">
-            <span className="contact-label">Compre com...</span>
+        <div className='contact'>
+            <span className='contact-label'>Compre com</span>
             <ContactButton
                 contact={contact}
                 message={message}

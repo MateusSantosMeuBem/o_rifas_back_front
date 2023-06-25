@@ -1,13 +1,14 @@
 .contact {
     display: flex;
     width: 100%;
+    justify-content: center;
 
     gap: 0.5rem;
 
 }
 
 .contact-label {
-    width: 100%;
+    width: 400px;
     text-align: left;
     font-size: 1rem;
     font-weight: 500;

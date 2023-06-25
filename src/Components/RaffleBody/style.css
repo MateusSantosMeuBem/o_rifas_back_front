@@ -3,6 +3,6 @@
         display: flex;
         flex-direction: row;
         justify-content: baseline;
-        padding-left: 32px;
+        padding: 32px;
     }
 }

@@ -21,8 +21,8 @@
     cursor: pointer;
 }
 
-@media screen and (min-width: 769px){
-    .contact-button{
+@media screen and (min-width: 769px) {
+    .contact-button {
         max-width: 400px;
     }
 }
