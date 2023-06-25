@@ -1,9 +1,9 @@
-.labelPrice{
+.labelPrice {
     font-size: 2.5rem;
 }
 
-@media screen and (min-width: 769px){
-    .labelPrice{
-        width: 50%;
+@media screen and (min-width: 769px) {
+    .labelPrice {
+        width: 100%;
     }
 }
