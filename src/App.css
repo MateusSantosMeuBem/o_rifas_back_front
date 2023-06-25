@@ -14,8 +14,6 @@ div {
   width: 100%;
 }
 
-@media (max-width: 720px) {
-  body {
-    padding: 10px 44px;
-  }
+body {
+  padding: 10px 44px;
 }

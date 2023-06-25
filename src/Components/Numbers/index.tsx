@@ -1,6 +1,6 @@
 import './style.css'
 
-const Title = () => {
+const Numbers = () => {
 
     return (
         <>
@@ -8,4 +8,4 @@ const Title = () => {
     )
 }
 
-export default Title
+export default Numbers
