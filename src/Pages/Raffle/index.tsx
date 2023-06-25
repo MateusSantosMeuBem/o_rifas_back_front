@@ -8,11 +8,13 @@ import ContactButton from '@/Components/Contact/ContactButton';
 import '@/Pages/Raffle/style.css'
 
 import { useParams } from 'react-router-dom';
+import Payment from '@/Components/Payment';
 
 const Raffle = () => {
 
   const [localSeller, setLocalSeller] = useState<SellerProps>(defaultSeller);
   const [chosenNumbers, setChosenNumbers] = useState<string[]>([]);
+  const [price, setPrice] = useState<number>(0);
   const { seller } = useParams();
 
   useEffect(() => {
@@ -32,27 +34,36 @@ const Raffle = () => {
     fetchData();
   }, [seller])
 
+  useEffect(() => {
+    setPrice(chosenNumbers.length * 5);
+  }, [chosenNumbers]);
+
   console.log(chosenNumbers);
+  console.log(price);
+
 
   return (
     <>
       <Title />
       <Banner />
-        <div className='containerNumberButtons'>
-          {localSeller.numbers.map(({ number, sold }: SellerNumbers) => (
-            <NumberButton
-              setChosenNumbers={setChosenNumbers}
-              label={number}
-              avaiable={sold === 'NÃO' ? true : false}
-              key={number}
-            />
-          ))}
-        </div>
-      <ContactButton
-        message=''
-        sellerName={localSeller.sellerName}
-        contact={localSeller.contact}
-      />
+      <div className='containerNumberButtons'>
+        {localSeller.numbers.map(({ number, sold }: SellerNumbers) => (
+          <NumberButton
+            setChosenNumbers={setChosenNumbers}
+            label={number}
+            avaiable={sold === 'NÃO' ? true : false}
+            key={number}
+          />
+        ))}
+      </div>
+      <div className='containerSale'>
+        <Payment price={price} />
+        <ContactButton
+          message=''
+          sellerName={localSeller.sellerName}
+          contact={localSeller.contact}
+        />
+      </div>
       {/* Números */}
       {/* Dados de comprar */}
       {/* Footer */}

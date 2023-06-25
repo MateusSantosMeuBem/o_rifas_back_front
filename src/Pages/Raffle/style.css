@@ -8,3 +8,12 @@
     justify-content: center;
 
 }
+
+.containerSale{
+    @media screen and (min-width: 769px){
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        padding-left: 32px;
+    }
+}
