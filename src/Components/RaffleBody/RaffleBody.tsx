@@ -12,6 +12,7 @@ import { SellerProps, defaultSeller } from '@/props/SellerProps';
 
 import { buildMessage } from '@/utils/string';
 import { buildValueToPay } from '@/utils/math';
+import { fetchSeller } from '@/services/RaffleBodyServices';
 
 const RaffleBody = () => {
   const [localSeller, setLocalSeller] = useState<SellerProps>(defaultSeller);
@@ -22,22 +23,11 @@ const RaffleBody = () => {
   const valuePerRaffle = 5;
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await fetch(`https://orifas.onrender.com/numbers/${seller}`);
-      const apiResponse = await response.json();
-      setLocalSeller({
-        avaiableNumbers: apiResponse.avaiable_numbers,
-        contact: apiResponse.contact,
-        numbers: apiResponse.numbers,
-        pix: apiResponse.pix,
-        sellerName: apiResponse.seller_name,
-        soldNumbers: apiResponse.sold_numbers
-      });
-      setIsLoading(false);
-    }
-
-    fetchData();
+    fetchSeller({
+      loadindHandler: setIsLoading,
+      sellerHandler: setLocalSeller,
+      sellerName: seller
+    });
   }, [seller])
 
   useEffect(() => {
