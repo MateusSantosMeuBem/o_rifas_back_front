@@ -6,6 +6,6 @@
  * @returns Value to pay
  */
 export const buildValueToPay = (
-    chosenNumbers: string[],
+    chosenNumbersLength: number,
     valuePerRaffle: number
-) => chosenNumbers.length * valuePerRaffle;
+) => chosenNumbersLength * valuePerRaffle;

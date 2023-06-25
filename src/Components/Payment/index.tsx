@@ -7,7 +7,7 @@ const Payment = ({ price }: PaymentProps) => {
     return (
         <>
             <span className='labelPrice'>
-                { price.toFixed(2) }
+                R$ { price.toFixed(2) }
             </span>
         </>
     )

@@ -10,6 +10,7 @@ import '@/Pages/Raffle/style.css'
 
 import { useParams } from 'react-router-dom';
 import Payment from '@/Components/Payment';
+import { buildValueToPay } from '@/utils/math';
 
 const Raffle = () => {
 
@@ -17,6 +18,7 @@ const Raffle = () => {
   const [chosenNumbers, setChosenNumbers] = useState<string[]>([]);
   const [price, setPrice] = useState<number>(0);
   const { seller } = useParams();
+  const valuePerRaffle = 5;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +38,7 @@ const Raffle = () => {
   }, [seller])
 
   useEffect(() => {
-    setPrice(chosenNumbers.length * 5);
+    setPrice(buildValueToPay(chosenNumbers.length, valuePerRaffle));
   }, [chosenNumbers]);
 
   console.log(chosenNumbers);

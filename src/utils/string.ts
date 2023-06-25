@@ -24,6 +24,6 @@ export const buildMessage = (
     return [
         `Olá, ${capitalize(sellerName)}!`,
         `Gostaria de comprar os números ${numbers}.`,
-        `Vou mandar os R$${buildValueToPay(chosenNumbers, 5)},00 para o pix: ${pix}. Tudo bem?`
+        `Vou mandar os R$${buildValueToPay(chosenNumbers.length, 5)},00 para o pix: ${pix}. Tudo bem?`
     ].join(' ');
 }
