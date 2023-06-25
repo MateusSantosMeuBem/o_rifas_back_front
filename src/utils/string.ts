@@ -5,8 +5,23 @@ import { buildValueToPay } from "./math";
  * @param str String to be capitalized
  * @returns Capitalized string
  */
-export const capitalize = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+export const capitalize = (word: string) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+/**
+ * 
+ * @param singular The singular sentence
+ * @param plural The plural sentence
+ * @param number The number to be evaluated
+ * @returns The singular sentence if the number is 1, otherwise the plural sentence
+ */
+const buildNumeral = (
+    singular: string,
+    plural: string,
+    number: number,
+) => {
+    return number > 1 ? plural : singular
 }
 
 /**
@@ -20,10 +35,17 @@ export const buildMessage = (
     sellerName: string,
     pix: string,
 ) => {
+
+    const chosenNumbersLength = chosenNumbers.length;
+    const numeral = buildNumeral(
+        'o número',
+        'os números',
+        chosenNumbersLength,
+    )
     const numbers = chosenNumbers.join(' | ');
     return [
         `Olá, ${capitalize(sellerName)}!`,
-        `Gostaria de comprar os números ${numbers}.`,
-        `Vou mandar os R$${buildValueToPay(chosenNumbers.length, 5)},00 para o pix: ${pix}. Tudo bem?`
+        `Gostaria de comprar ${numeral} ${numbers}.`,
+        `Vou mandar os R$${buildValueToPay(chosenNumbersLength, 5)},00 para o pix: ${pix}. Tudo bem?`
     ].join(' ');
 }

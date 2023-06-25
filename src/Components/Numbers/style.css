@@ -1,0 +1,9 @@
+.containerNumberButtons {
+    max-height: 20rem;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
