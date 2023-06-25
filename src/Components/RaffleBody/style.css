@@ -1,0 +1,8 @@
+.containerSale {
+    @media screen and (min-width: 769px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        padding-left: 32px;
+    }
+}
