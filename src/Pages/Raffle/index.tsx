@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import Banner from '@/Components/Banner';
+import { buildMessage } from '@/utils/string';
 import NumberButton from '@/Components/Numbers/NumberButton';
 import Title from '@/Components/Title';
 import { SellerNumbers, SellerProps, defaultSeller } from '@/props/SellerProps';
-import ContactButton from '@/Components/Contact/ContactButton';
+import Contact from '@/Components/Contact';
 import '@/Pages/Raffle/style.css'
 
 import { useParams } from 'react-router-dom';
@@ -58,8 +59,8 @@ const Raffle = () => {
       </div>
       <div className='containerSale'>
         <Payment price={price} />
-        <ContactButton
-          message=''
+        <Contact
+          message={buildMessage(chosenNumbers, localSeller.sellerName, localSeller.pix)}
           sellerName={localSeller.sellerName}
           contact={localSeller.contact}
         />
