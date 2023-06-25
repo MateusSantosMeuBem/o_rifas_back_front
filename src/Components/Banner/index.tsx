@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 import './style.css'
+import tinyImage from '@/assets/tiny.png'
+import mediumImage from '@/assets/medium.png'
+import bigImage from '@/assets/medium.png'
+import bigestImage from '@/assets/biggest.png'
 
 const Banner = () => {
   const [imageSrc, setImageSrc] = useState('');
@@ -9,13 +13,13 @@ const Banner = () => {
       const screenWidth = window.innerWidth;
 
       if (screenWidth <= 770) {
-        setImageSrc('tiny.png');
+        setImageSrc(tinyImage);
       } else if (screenWidth <= 1300) {
-        setImageSrc('medium.png');
+        setImageSrc(mediumImage);
       } else if (screenWidth <= 1700) {
-        setImageSrc('big.png');
+        setImageSrc(bigImage);
       } else {
-        setImageSrc('biggest.png');
+        setImageSrc(bigestImage);
       }
     };
 
@@ -31,7 +35,7 @@ const Banner = () => {
   }, []);
 
   return <img
-    src={`/src/assets/${imageSrc}`}
+    src={imageSrc}
     alt=''
     className='banner'
   />;
