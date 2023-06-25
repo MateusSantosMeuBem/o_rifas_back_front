@@ -31,7 +31,7 @@ const Banner = () => {
   }, []);
 
   return <img
-    src={`/src/assets/banners/${imageSrc}`}
+    src={`/src/assets/${imageSrc}`}
     alt=''
     className='banner'
   />;
