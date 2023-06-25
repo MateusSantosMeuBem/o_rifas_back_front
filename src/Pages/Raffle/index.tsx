@@ -41,10 +41,6 @@ const Raffle = () => {
     setPrice(buildValueToPay(chosenNumbers.length, valuePerRaffle));
   }, [chosenNumbers]);
 
-  console.log(chosenNumbers);
-  console.log(price);
-
-
   return (
     <>
       <Title />
