@@ -42,10 +42,12 @@ export const buildMessage = (
         'os números',
         chosenNumbersLength,
     )
+    chosenNumbers.sort((a, b) => a.length - b.length || a.localeCompare(b, 'en', { numeric: true }));
     const numbers = chosenNumbers.join(' | ');
     return [
-        `Olá, ${capitalize(sellerName)}!`,
-        `Gostaria de comprar ${numeral} ${numbers}.`,
-        `Vou mandar os R$${buildValueToPay(chosenNumbersLength, 5)},00 para o pix: ${pix}. Tudo bem?`
-    ].join(' ');
+        `Olá, ${capitalize(sellerName)}! `,
+        `Gostaria de comprar ${numeral} ${numbers}.\r\n`,
+        `Vou mandar os R$${buildValueToPay(chosenNumbersLength, 5)},00 para o pix: ${pix}.`,
+        `\r\nTudo bem?`
+    ].join('');
 }
