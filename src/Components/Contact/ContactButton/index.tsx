@@ -8,9 +8,6 @@ const ContactButton = ({
     message,
     contact,
 }: ContactButtonProps) => {
-    console.log(message);
-    
-    
     return (
         <a className='contact-button' href={`${contact}?text=${encodeURIComponent(message)}`} target='_blank'>
             {capitalize(sellerName)}
