@@ -6,7 +6,8 @@ export const fetchSeller = async ({
     sellerHandler,
 }: FetchSellerProps) => {
     loadindHandler(true);
-    const response = await fetch(`https://orifas.onrender.com/numbers/${sellerName}`);
+    const backUrl = 'https://orifas.onrender.com'
+    const response = await fetch(`${backUrl}/numbers/${sellerName}`);
     const apiResponse = await response.json();
     sellerHandler({
         avaiableNumbers: apiResponse.avaiable_numbers,
