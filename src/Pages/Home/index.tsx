@@ -1,15 +1,15 @@
 import Title from '@/Components/Title';
 import Banner from '@/Components/Banner';
-import Body from '@/Components/RaffleBody/RaffleBody';
+import HomeBody from '@/Components/HomeBody/HomeBody';
 
-const Raffle = () => {
+const Home = () => {
 
   return (
     <>
       <Title />
       <Banner />
-      <Body />
+      <HomeBody />
     </>
   )
 }
-export default Raffle;
+export default Home;
