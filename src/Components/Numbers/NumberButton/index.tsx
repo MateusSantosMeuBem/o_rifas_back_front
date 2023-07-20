@@ -9,11 +9,11 @@ const handleClick = (
   label: string,
   isChecked: boolean,
 ) => {
-    if (!isChecked) {
-        setChosenNumbers((prev) => [...prev, label]);
-    } else {
-        setChosenNumbers((prev) => prev.filter((number) => number !== label));
-    }
+  if (!isChecked) {
+    setChosenNumbers((prev) => [...prev, label]);
+  } else {
+    setChosenNumbers((prev) => prev.filter((number) => number !== label));
+  }
 }
 
 const NumberButton = ({
